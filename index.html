@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#062f2a" />
+  <meta name="description" content="ABDINI STUDIO — мужские и женские стрижки в Волгограде. Стрижка, борода, бритьё, тонирование и окрашивание. Онлайн-запись." />
+  <title>ABDINI STUDIO — мужские и женские стрижки в Волгограде</title>
+  <style>
+    :root{
+      --bg:#062f2a; --panel:#0a3a33; --panel2:#0d463d; --text:#f7f2e8; --muted:#d0c8bb;
+      --line:rgba(247,242,232,.18); --accent:#f3eadc; --black:#041f1b; --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin:auto}
+    .nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(6,47,42,.90);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav .wrap{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:800;letter-spacing:.16em;font-size:14px;white-space:nowrap}
+    .navlinks{display:flex;gap:26px;align-items:center;font-size:13px;color:#ded6ca}
+    .navlinks a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--accent);color:#062f2a;font-weight:750;font-size:14px;transition:.2s;border:1px solid var(--accent)}
+    .btn:hover{transform:translateY(-1px);opacity:.92}
+    .btn.ghost{background:transparent;color:var(--text);border-color:#3a3936}
+    .hero{min-height:100svh;display:flex;align-items:end;padding:130px 0 72px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 25%,rgba(255,255,255,.08),transparent 30%),linear-gradient(135deg,#062f2a 0%,#042720 58%,#0a3a33 100%)}
+    .hero:after{content:"ABDINI";position:absolute;right:-2vw;top:13vh;font-size:min(24vw,320px);font-weight:900;letter-spacing:-.07em;color:rgba(255,255,255,.025);line-height:.8;pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:70px}
+    .kicker{text-transform:uppercase;letter-spacing:.24em;color:#ddd4c8;font-size:11px;margin-bottom:18px}
+    h1{font-size:clamp(54px,8.5vw,120px);line-height:.86;margin:0;letter-spacing:-.065em;font-weight:850;max-width:850px}
+    .hero p{font-size:clamp(17px,2vw,23px);color:#e5ddd0;max-width:610px;margin:28px 0 0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .hero-note{border-left:1px solid rgba(247,242,232,.35);padding-left:24px;color:#d0c8bb;font-size:14px;max-width:360px;margin-left:auto}
+    .hero-note b{display:block;color:#f7f2e8;font-size:18px;margin-bottom:7px}
+    section{padding:110px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;margin-bottom:54px}
+    .section-head h2{font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-.045em;margin:0}
+    .section-head p{margin:7px 0 0;color:var(--muted);max-width:600px;font-size:17px}
+    .price-list{border-top:1px solid rgba(247,242,232,.26)}
+    .price-row{display:grid;grid-template-columns:1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid rgba(247,242,232,.17);align-items:end}
+    .price-row .name{font-size:clamp(20px,2.6vw,34px);letter-spacing:-.025em}
+    .price-row .sub{display:block;color:#beb5a9;font-size:13px;margin-top:5px}
+    .price{font-size:clamp(20px,2.4vw,30px);font-variant-numeric:tabular-nums;white-space:nowrap}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:620px;gap:14px}
+    .photo{position:relative;overflow:hidden;border:1px solid rgba(247,242,232,.16);background:#042720;margin:0}
+    .photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
+    .photo:hover img{transform:scale(1.015)}
+    .photo:after{content:"Яндекс Карты";position:absolute;left:16px;bottom:14px;padding:7px 10px;border-radius:999px;background:rgba(4,31,27,.72);backdrop-filter:blur(8px);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#f7f2e8}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .review{background:var(--panel);border:1px solid rgba(247,242,232,.14);padding:30px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote{font-size:20px;line-height:1.45;letter-spacing:-.015em}
+    .source{color:#c5bcaf;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin-top:28px}
+    .location-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
+    .address-card{background:var(--panel);border:1px solid rgba(247,242,232,.14);padding:40px;display:flex;flex-direction:column;justify-content:space-between}
+    .address-card h3{font-size:32px;line-height:1.12;margin:0 0 18px;letter-spacing:-.035em}
+    .address-card p{color:#d0c8bb;margin:0 0 30px}
+    .map{min-height:430px;border:0;width:100%;filter:grayscale(.45) sepia(.15) hue-rotate(100deg) saturate(.7) contrast(1.02);background:#042720}
+    .final{padding:120px 0 130px;text-align:center}
+    .final h2{font-size:clamp(44px,8vw,106px);line-height:.9;letter-spacing:-.06em;margin:0 auto 34px;max-width:950px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:#c1b8ab;font-size:12px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:820px){
+      .navlinks a:not(.btn){display:none}.navlinks{gap:0}.nav .btn{min-height:42px;padding:0 16px}
+      .hero{padding-top:120px}.hero-grid,.section-head,.location-grid{grid-template-columns:1fr}.hero-grid{gap:48px}.hero-note{margin-left:0}
+      section{padding:78px 0}.section-head{gap:18px;margin-bottom:36px}
+      .gallery{grid-template-columns:1fr;grid-template-rows:430px 430px}
+      .reviews{grid-template-columns:1fr}.review{min-height:auto}
+      .address-card{padding:28px}.map{min-height:360px}
+    }
+    @media(max-width:520px){.wrap{width:min(calc(100% - 24px),var(--max))}.brand{font-size:12px}.price-row{padding:20px 0}.gallery{grid-template-rows:360px 360px}.hero-actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">ABDINI STUDIO</a>
+      <nav class="navlinks">
+        <a href="#services">Услуги</a><a href="#studio">Студия</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+        <a class="btn" href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16" target="_blank" rel="noopener">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker">Волгоград · Центральный район</div>
+          <h1>МУЖСКИЕ<br>И ЖЕНСКИЕ<br>СТРИЖКИ.</h1>
+          <p>ABDINI STUDIO — небольшая студия, где важны форма, детали и спокойная атмосфера.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16" target="_blank" rel="noopener">Записаться онлайн</a>
+            <a class="btn ghost" href="#services">Посмотреть прайс</a>
+          </div>
+        </div>
+        <div class="hero-note"><b>ABDINI STUDIO</b>Стрижка, борода, бритьё, тонирование и окрашивание. Мытьё головы и укладка входят в стрижку.</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><h2>Услуги</h2><p>Понятный прайс без сложных пакетов. Выбираете нужную услугу — остальное обсуждаем перед началом работы.</p></div>
+        <div class="price-list">
+          <div class="price-row"><div class="name">Мужская стрижка<span class="sub">мытьё головы · укладка</span></div><div class="price">1 100 ₽</div></div>
+          <div class="price-row"><div class="name">Стрижка + борода<span class="sub">комплекс</span></div><div class="price">1 600 ₽</div></div>
+          <div class="price-row"><div class="name">Оформление бороды</div><div class="price">900 ₽</div></div>
+          <div class="price-row"><div class="name">Простое бритьё</div><div class="price">600 ₽</div></div>
+          <div class="price-row"><div class="name">Бритьё бороды</div><div class="price">400 ₽</div></div>
+          <div class="price-row"><div class="name">Тонирование бороды</div><div class="price">1 100 ₽</div></div>
+          <div class="price-row"><div class="name">Камуфляж седины / волос</div><div class="price">1 600 ₽</div></div>
+          <div class="price-row"><div class="name">Окрашивание</div><div class="price">от 3 000 ₽</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio">
+      <div class="wrap">
+        <div class="section-head"><h2>Студия</h2><p>Без конвейера. Один мастер, отдельное пространство, музыка, Welcome drink и чистая работа.</p></div>
+        <div class="gallery">
+          <figure class="photo"><img src="https://avatars.mds.yandex.net/get-altay/20307657/2a0000019ec63c28c48307c2224bda573202/XXL_height" alt="Работа мастера ABDINI STUDIO" loading="lazy"></figure>
+          <figure class="photo"><img src="https://avatars.mds.yandex.net/get-altay/19756885/2a0000019edaaa36023fdfa77ee7510ded14/XXL_height" alt="Кофейная зона ABDINI STUDIO" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head"><h2>Говорят гости</h2><p>На сайте достаточно нескольких живых отзывов. Все остальные — по ссылке на Яндекс Картах.</p></div>
+        <div class="reviews">
+          <article class="review"><div class="quote">«Полностью доверился и не ошибся. Однозначно рекомендую тем, кто ещё находится в сомнениях.»</div><div class="source">Отзыв гостя · Яндекс Карты</div></article>
+          <article class="review"><div class="quote">«Единственный мастер в городе, который понял, что я хочу. Очень атмосферная студия.»</div><div class="source">Отзыв гостя · Яндекс Карты</div></article>
+          <article class="review"><div class="quote">«Стрижка получилась именно такой, как хотела. Винил, музыка и атмосфера сделали визит особенным.»</div><div class="source">Отзыв гостя · Яндекс Карты</div></article>
+        </div>
+        <div style="margin-top:28px"><a class="btn ghost" href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16" target="_blank" rel="noopener">Смотреть все отзывы</a></div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="wrap">
+        <div class="section-head"><h2>Найти нас</h2><p>Центр Волгограда. Перед визитом удобнее записаться онлайн — так время будет закреплено за вами.</p></div>
+        <div class="location-grid">
+          <div class="address-card">
+            <div><div class="kicker">Адрес</div><h3>Волгоград,<br>ул. 13-й Гвардейской Дивизии, 13А</h3><p>Вход со двора.</p></div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+              <a class="btn ghost" href="https://www.instagram.com/abdinistudio/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+          <iframe class="map" title="ABDINI STUDIO на карте" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=44.527037%2C48.716009&z=16&pt=44.527037,48.716009,pm2rdm"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap"><div class="kicker">ABDINI STUDIO</div><h2>Время обновить стрижку.</h2><a class="btn" href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16" target="_blank" rel="noopener">Выбрать время</a></div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><span>© 2026 ABDINI STUDIO</span><span>Волгоград · ул. 13-й Гвардейской Дивизии, 13А</span></div></footer>
+</body>
+</html>
