@@ -70,6 +70,140 @@
       .address-card{padding:28px}.map{min-height:360px}
     }
     @media(max-width:520px){.wrap{width:min(calc(100% - 24px),var(--max))}.brand{font-size:12px}.price-row{padding:20px 0}.gallery{grid-template-rows:360px 360px}.hero-actions .btn{width:100%}}
+      /* Статья: стрижка ножницами */
+    .article-toggle{
+      display:block;
+      margin-top:7px;
+      padding:0;
+      border:0;
+      background:none;
+      color:#beb5a9;
+      font:inherit;
+      font-size:13px;
+      cursor:pointer;
+      text-align:left;
+      transition:.2s;
+    }
+
+    .article-toggle:hover{
+      color:var(--text);
+    }
+
+    .service-article{
+      display:none;
+      border-bottom:1px solid rgba(247,242,232,.17);
+    }
+
+    .service-article.open{
+      display:block;
+    }
+
+    .article-inner{
+      max-width:850px;
+      padding:64px 0 72px;
+    }
+
+    .article-inner h2{
+      font-size:clamp(34px,5vw,64px);
+      line-height:1;
+      letter-spacing:-.045em;
+      margin:0 0 36px;
+    }
+
+    .article-inner h3{
+      font-size:clamp(24px,3vw,36px);
+      line-height:1.15;
+      letter-spacing:-.03em;
+      margin:58px 0 20px;
+    }
+
+    .article-inner p,
+    .article-inner li{
+      font-size:17px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .article-inner p{
+      margin:0 0 20px;
+    }
+
+    .article-inner strong{
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .article-inner ul{
+      margin:0 0 28px;
+      padding-left:22px;
+    }
+
+    .article-inner li{
+      margin-bottom:8px;
+    }
+
+    .article-cta{
+      margin-top:64px;
+      padding:32px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .article-cta span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .article-cta strong{
+      display:block;
+      font-size:32px;
+    }
+
+    .article-cta p{
+      font-size:13px;
+      margin:8px 0 0;
+      max-width:520px;
+    }
+
+    .article-close{
+      margin-top:28px;
+      padding:0;
+      border:0;
+      background:none;
+      color:#beb5a9;
+      font-size:13px;
+      cursor:pointer;
+    }
+
+    .article-close:hover{
+      color:var(--text);
+    }
+
+    @media(max-width:520px){
+      .article-inner{
+        padding:46px 0 54px;
+      }
+
+      .article-inner p,
+      .article-inner li{
+        font-size:16px;
+      }
+
+      .article-cta{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .article-cta .btn{
+        width:100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -104,7 +238,217 @@
         <div class="section-head"><h2>Услуги</h2><p>Понятный прайс без сложных пакетов. Выбираете нужную услугу — остальное обсуждаем перед началом работы.</p></div>
         <div class="price-list">
           <div class="price-row"><div class="name">Мужская стрижка<span class="sub">мытьё головы · укладка</span></div><div class="price">1 100 ₽</div></div>
-          <div class="price-row"><div class="name">Стрижка ножницами</div><div class="price">1 500 ₽</div></div>
+         <div class="scissors-service" id="dlinnaya-strizhka">
+
+  <div class="price-row">
+    <div class="name">
+      Стрижка ножницами
+      <button class="article-toggle" type="button" aria-expanded="false" aria-controls="scissors-article">
+        Подробнее об удлинённых стрижках ↓
+      </button>
+    </div>
+    <div class="price">1 500 ₽</div>
+  </div>
+
+  <article class="service-article" id="scissors-article">
+
+    <div class="article-inner">
+
+      <div class="kicker">Мужские стрижки · Волгоград</div>
+
+      <h2>Длинная мужская стрижка: когда волосы — это форма, а не просто длина</h2>
+
+      <p>
+        Мужская стрижка не обязательно заканчивается фейдом, короткими висками и машинкой.
+      </p>
+
+      <p>
+        Если волосы позволяют, длину можно использовать как часть образа: сохранить объём,
+        подчеркнуть естественное направление волос, добавить движение и подобрать форму,
+        которая будет хорошо выглядеть не только сразу после стрижки, но и
+        <strong>через месяц, а зачастую и дольше</strong>.
+      </p>
+
+      <p>
+        Именно поэтому в АбдиниСтудия есть отдельная услуга —
+        <strong>стрижка ножницами для удлинённых форм</strong>.
+      </p>
+
+      <h3>Чем длинная форма отличается от обычной мужской стрижки?</h3>
+
+      <p>
+        Главное отличие — задача.
+      </p>
+
+      <p>
+        В короткой стрижке значительная часть формы может строиться за счёт машинки:
+        переходов, сведения длины, окантовки.
+      </p>
+
+      <p>
+        При работе с длинными волосами важнее другое:
+        <strong>как лежит масса волос, где находится объём, как соединяются зоны
+        и как волосы будут двигаться после стрижки</strong>.
+      </p>
+
+      <p>
+        Поэтому здесь чаще используется работа ножницами.
+      </p>
+
+      <p>
+        Это не значит, что ножницы автоматически делают стрижку лучше машинки.
+        Это разные инструменты для разных задач.
+      </p>
+
+      <p>
+        Если нужна короткая форма — машинка может быть идеальным инструментом.
+        Если мы хотим сохранить длину и движение волос — основная работа чаще
+        переходит к ножницам.
+      </p>
+
+      <p>
+        При грамотно выстроенной длинной форме волосы не теряют вид через две-три недели.
+        Они продолжают отрастать внутри заданной формы, поэтому следующая стрижка может
+        потребоваться через месяц или даже позже — в зависимости от длины, структуры
+        волос и желаемого результата.
+      </p>
+
+      <h3>Не обязательно знать название своей стрижки</h3>
+
+      <p>
+        Bro Flow, Curtains, Mod Cut, Wolf Cut, Two Block — в социальных сетях можно
+        встретить десятки названий мужских стрижек.
+      </p>
+
+      <p>
+        <strong>Разбираться в них перед походом в студию не нужно.</strong>
+      </p>
+
+      <p>
+        Можно показать фотографию понравившейся стрижки. Можно объяснить, какую длину
+        хочется сохранить, где хочется больше объёма или, наоборот, убрать его.
+        А можно просто сказать:
+      </p>
+
+      <p><strong>«Я отращиваю волосы и не понимаю, что с ними сейчас делать».</strong></p>
+
+      <p>
+        Этого уже достаточно для консультации.
+      </p>
+
+      <p>
+        Перед стрижкой мы посмотрим на длину, густоту, структуру и направление роста волос,
+        обсудим желаемый результат и подберём форму.
+      </p>
+
+      <p>
+        Иногда фотографию из интернета можно повторить почти полностью.
+        Иногда форму приходится адаптировать <strong>под Ваш тип волос</strong>.
+      </p>
+
+      <p>
+        Референс — это ориентир, а не инструкция для слепого копирования.
+      </p>
+
+      <h3>«Я отращиваю волосы, поэтому пока не стригусь»</h3>
+
+      <p>
+        Распространённая логика — вообще не трогать волосы несколько месяцев,
+        пока они не станут достаточно длинными.
+      </p>
+
+      <p>
+        Но отращивание и отсутствие стрижки — не одно и то же.
+      </p>
+
+      <p>
+        По мере роста отдельные зоны могут становиться слишком тяжёлыми,
+        теряются пропорции, а форма начинает выглядеть случайной.
+      </p>
+
+      <p>
+        При этом необязательно существенно убирать длину.
+      </p>
+
+      <p>
+        Задача может состоять именно в том, чтобы
+        <strong>сохранить рост волос, но привести их в форму</strong>.
+      </p>
+
+      <p>
+        Особенно это актуально на промежуточном этапе, когда короткой стрижки уже нет,
+        а желаемая длина ещё не появилась.
+      </p>
+
+      <h3>А как это укладывать дома?</h3>
+
+      <p>
+        Это один из главных вопросов после перехода на более длинную форму.
+      </p>
+
+      <p>
+        Хорошая новость в том, что укладка не обязательно означает двадцать минут
+        перед зеркалом и пять разных банок косметики.
+      </p>
+
+      <p>
+        Многое зависит от самой стрижки, направления роста волос и желаемого результата.
+      </p>
+
+      <p>
+        После стрижки я укладываю волосы и могу объяснить,
+        <strong>что именно использовал и как повторить этот результат дома</strong>.
+      </p>
+
+      <p>
+        При этом салонная и домашняя укладка могут отличаться.
+        Цель — не заставить человека каждое утро воспроизводить работу мастера,
+        а найти понятный способ самостоятельно поддерживать форму.
+      </p>
+
+      <h3>Кому подойдёт стрижка ножницами?</h3>
+
+      <p>В первую очередь тем, кто:</p>
+
+      <ul>
+        <li>отращивает волосы;</li>
+        <li>хочет сохранить существующую длину;</li>
+        <li>устал от очень коротких стрижек;</li>
+        <li>хочет больше естественного объёма и движения;</li>
+        <li>носит или хочет попробовать удлинённую мужскую форму;</li>
+        <li>не знает, что делать с волосами на промежуточном этапе отращивания.</li>
+      </ul>
+
+      <p>
+        И необязательно заранее понимать, какая именно стрижка нужна.
+      </p>
+
+      <p><strong>С этого и начинается консультация.</strong></p>
+
+      <div class="article-cta">
+        <div>
+          <span>Стрижка ножницами</span>
+          <strong>1 500 ₽</strong>
+          <p>Мытьё головы, удаление волос воском и укладка входят в стоимость.</p>
+        </div>
+
+        <a class="btn"
+           href="https://yandex.ru/maps/org/abdinistudiya/53081264687/?ll=44.527037%2C48.716009&z=16"
+           target="_blank"
+           rel="noopener">
+          Записаться
+        </a>
+      </div>
+
+      <button class="article-close" type="button">
+        Свернуть ↑
+      </button>
+
+    </div>
+
+  </article>
+
+</div>
           <div class="price-row"><div class="name">Оформление бороды</div><div class="price">900 ₽</div></div>
           <div class="price-row"><div class="name">Бритьё бороды</div><div class="price">600 ₽</div></div>
           <div class="price-row"><div class="name">Комплекс: стрижка + борода</div><div class="price">1 600 ₽</div></div>
@@ -161,5 +505,38 @@
   </main>
 
   <footer><div class="wrap footer-row"><span>© 2026 ABDINI STUDIO</span><span>Волгоград · ул. 13-й Гвардейской Дивизии, 13А</span></div></footer>
+<script>
+  const articleToggle = document.querySelector('.article-toggle');
+  const articleClose = document.querySelector('.article-close');
+  const serviceArticle = document.querySelector('.service-article');
+
+  function openArticle() {
+    serviceArticle.classList.add('open');
+    articleToggle.setAttribute('aria-expanded', 'true');
+    articleToggle.textContent = 'Свернуть ↑';
+  }
+
+  function closeArticle() {
+    serviceArticle.classList.remove('open');
+    articleToggle.setAttribute('aria-expanded', 'false');
+    articleToggle.textContent = 'Подробнее об удлинённых стрижках ↓';
+  }
+
+  articleToggle.addEventListener('click', function () {
+    if (serviceArticle.classList.contains('open')) {
+      closeArticle();
+    } else {
+      openArticle();
+    }
+  });
+
+  articleClose.addEventListener('click', function () {
+    closeArticle();
+    document.getElementById('dlinnaya-strizhka').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  });
+</script>
 </body>
 </html>
